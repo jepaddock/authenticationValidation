@@ -18,4 +18,4 @@ module.exports = exports = (req,res,next)=>{
             return res.status(500).send("There was an error getting your session data. Please refresh and try again.")
         }
     })
-})
+}
