@@ -1,5 +1,5 @@
 # authenticationValidation
-This is used to validate users' sessions with an app. See the readme for more.
+This is used to validate users' sessions with an app. If the user is not authorized to use the app, they will not be able to use any aspect of the backend-portion of the app (frontend access is controlled by a combination of NGINX and the Authenticator app, and has nothing to do with this script).
 
 ## How To Use
 ```
