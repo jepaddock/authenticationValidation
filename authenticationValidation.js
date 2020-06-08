@@ -1,4 +1,4 @@
-app.use(function(req,res,next){
+module.exports = exports = (req,res,next)=>{
 
     //if the client no longer has a cookie in their headers, their session is not valid, and an error will be sent. Code execution stops here.
     if(!req.headers.cookie) return res.status(500).send("User session has expired. Please log in (you may need to refresh your page) to continue working.")
