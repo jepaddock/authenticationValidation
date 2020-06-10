@@ -11,10 +11,14 @@ module.exports = exports = (req,res,next)=>{
         "method" : "GET",   "url" : "http://localhost:3002/authenticator/api/userData",     "headers" : {"cookie":req.headers.cookie }
     },
     function(err,response,body){
-        if(!err){ //as long as there were no errors in getting the client's data, their data will be added to their session with this app, in order to be used later
+        if(response.statusCode == 403){ //if forbidden, forward the Authenticator message to the client
+            return res.status(403).send(body)
+        }
+        else if(!err){ //as long as there were no errors in getting the client's data, their data will be added to their session with this app, in order to be used later
             req.session = JSON.parse(body)
             next() //code execution will continue here.
-        }else{
+        }else if(response.statusCode > 200){ //handles all other errors
+
             //otherwise, send an error to the client. Code execution will stop here.
             console.log("Error while getting user's Authenticator data:", err)
             return res.status(500).send("There was an error getting your session data. Please refresh and try again.")
