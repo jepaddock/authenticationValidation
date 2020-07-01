@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # authenticationValidation
 This is used to validate users' sessions with an app. If the user is not authorized to use the app, they will not be able to use any aspect of the backend-portion of the app (frontend access is controlled by a combination of NGINX and the Authenticator app, and has nothing to do with this script).
 
@@ -19,3 +20,6 @@ app.use(authValidation)
 
 ## Dependencies
 This module is to be used within an Express application, and depends on Request.js, which you will need to add to your project's `package.json`. This might be able to be implemented using a framework other than Express, but it will likely need to be modified. 
+=======
+# authenticationValidation
+>>>>>>> e311dd7861b1fd0f20474039696d95425046dc91
